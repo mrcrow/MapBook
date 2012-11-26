@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AnnotationDetail" representedClassName="AnnotationDetail" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationPoint" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="locationString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="story" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="info" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="MapAnnotation" inverseName="detail" inverseEntity="MapAnnotation" syncable="YES"/>
+    </entity>
+    <entity name="MapAnnotation" representedClassName="MapAnnotation" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="annoID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="annoType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="coordinatePoints" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detail" optional="YES" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="AnnotationDetail" inverseName="info" inverseEntity="AnnotationDetail" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AnnotationDetail" positionX="-6761" positionY="-1656" width="128" height="150"/>
+        <element name="MapAnnotation" positionX="-7002" positionY="-1656" width="128" height="165"/>
+    </elements>
+</model>
