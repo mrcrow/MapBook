@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E862AF8716252FE00029ADAC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E862AF8616252FE00029ADAC /* CoreLocation.framework */; };
+		E8719E51162B19D4009243B8 /* LocationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E8719E4C162A8C21009243B8 /* LocationBookmark.m */; };
+		E8719E52162B19D4009243B8 /* PathBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E8719E4E162A8C21009243B8 /* PathBookmark.m */; };
+		E8719E53162B19D4009243B8 /* RagionBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E8719E50162A8C21009243B8 /* RagionBookmark.m */; };
+		E8719E66162BCF6D009243B8 /* BookmarkDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8719E64162BCF6D009243B8 /* BookmarkDetailController.m */; };
+		E8719E67162BCF6D009243B8 /* BookmarkDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8719E65162BCF6D009243B8 /* BookmarkDetailController.xib */; };
+		E8719E79162C7023009243B8 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8719E77162C7022009243B8 /* BookmarkViewController.m */; };
+		E8719E7A162C7023009243B8 /* BookmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8719E78162C7023009243B8 /* BookmarkViewController.xib */; };
+		E8719E7F162C8175009243B8 /* AddBookmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8719E7D162C8175009243B8 /* AddBookmarkViewController.xib */; };
+		E886108B16612B290014650C /* arrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = E886107D16612B290014650C /* arrowDown.png */; };
+		E886108C16612B290014650C /* arrowDownGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E886107E16612B290014650C /* arrowDownGreen.png */; };
+		E886108D16612B290014650C /* arrowDownPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = E886107F16612B290014650C /* arrowDownPurple.png */; };
+		E886108E16612B290014650C /* arrowDownRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108016612B290014650C /* arrowDownRed.png */; };
+		E886108F16612B290014650C /* arrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108116612B290014650C /* arrowRight.png */; };
+		E886109016612B290014650C /* arrowRightGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108216612B290014650C /* arrowRightGreen.png */; };
+		E886109116612B290014650C /* arrowRightPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108316612B290014650C /* arrowRightPurple.png */; };
+		E886109216612B290014650C /* arrowRightRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108416612B290014650C /* arrowRightRed.png */; };
+		E886109316612B290014650C /* at.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108516612B290014650C /* at.png */; };
+		E886109416612B290014650C /* atGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108616612B290014650C /* atGreen.png */; };
+		E886109516612B290014650C /* atPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108716612B290014650C /* atPurple.png */; };
+		E886109616612B290014650C /* atRed.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108816612B290014650C /* atRed.png */; };
+		E886109716612B290014650C /* targetOne.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108916612B290014650C /* targetOne.png */; };
+		E886109816612B290014650C /* targetTwo.png in Resources */ = {isa = PBXBuildFile; fileRef = E886108A16612B290014650C /* targetTwo.png */; };
+		E8A75E0A164F8DE600068B53 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A75E09164F8DE600068B53 /* AddressBookUI.framework */; };
+		E8A75E0C164F8DED00068B53 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A75E0B164F8DEC00068B53 /* AddressBook.framework */; };
+		E8A75EA316593DE800068B53 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A75EA116593DE500068B53 /* PageViewController.m */; };
+		E8A75EA416593DE800068B53 /* PageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8A75EA216593DE600068B53 /* PageViewController.xib */; };
+		E8AC82301638EEE2007C4EB3 /* AddBookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8719E7C162C8175009243B8 /* AddBookmarkViewController.m */; };
+		E8B5C1F31637C96B00CAC3B6 /* AnnotationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B5C1F11637C96A00CAC3B6 /* AnnotationDetailController.m */; };
+		E8B5C1F41637C96B00CAC3B6 /* AnnotationDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8B5C1F21637C96B00CAC3B6 /* AnnotationDetailController.xib */; };
+		E8B5C1FE1638E80800CAC3B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B5C1FD1638E80800CAC3B6 /* QuartzCore.framework */; };
+		E8C289F6165B6B8700EEC5E1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */; };
+		E8C2FF8B164BBEEF00CC50C7 /* AnnotationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C2FF8A164BBEEF00CC50C7 /* AnnotationDetail.m */; };
+		E8C2FF8E164BBEF000CC50C7 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C2FF8D164BBEF000CC50C7 /* MapAnnotation.m */; };
+		E8DBCBDD1644178900AE462C /* ColorExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBDC1644178900AE462C /* ColorExtention.m */; };
+		E8DBCBEF164438FB00AE462C /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBE41644358200AE462C /* AbstractActionSheetPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8DBCBF0164438FB00AE462C /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBE61644358200AE462C /* ActionSheetDatePicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8DBCBF1164438FB00AE462C /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBE81644358200AE462C /* ActionSheetDistancePicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8DBCBF2164438FB00AE462C /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBEA1644358200AE462C /* ActionSheetStringPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8DBCBF3164438FB00AE462C /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBEC1644358200AE462C /* DistancePickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8E40278161736490058C247 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E40277161736490058C247 /* UIKit.framework */; };
+		E8E4027A161736490058C247 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E40279161736490058C247 /* Foundation.framework */; };
+		E8E4027C161736490058C247 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E4027B161736490058C247 /* CoreGraphics.framework */; };
+		E8E4027E161736490058C247 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E4027D161736490058C247 /* CoreData.framework */; };
+		E8E40284161736490058C247 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8E40282161736490058C247 /* InfoPlist.strings */; };
+		E8E40286161736490058C247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E40285161736490058C247 /* main.m */; };
+		E8E4028A161736490058C247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E40289161736490058C247 /* AppDelegate.m */; };
+		E8E4028D161736490058C247 /* Maps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8E4028B161736490058C247 /* Maps.xcdatamodeld */; };
+		E8E40296161736A60058C247 /* MapBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E40294161736A60058C247 /* MapBookViewController.m */; };
+		E8E40297161736A60058C247 /* MapBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8E40295161736A60058C247 /* MapBookViewController.xib */; };
+		E8E402CC1617425E0058C247 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E402CB1617425E0058C247 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E862AF8616252FE00029ADAC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E8719E4B162A8C21009243B8 /* LocationBookmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationBookmark.h; sourceTree = "<group>"; };
+		E8719E4C162A8C21009243B8 /* LocationBookmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationBookmark.m; sourceTree = "<group>"; };
+		E8719E4D162A8C21009243B8 /* PathBookmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathBookmark.h; sourceTree = "<group>"; };
+		E8719E4E162A8C21009243B8 /* PathBookmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathBookmark.m; sourceTree = "<group>"; };
+		E8719E4F162A8C21009243B8 /* RegionBookmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegionBookmark.h; sourceTree = "<group>"; };
+		E8719E50162A8C21009243B8 /* RagionBookmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RagionBookmark.m; sourceTree = "<group>"; };
+		E8719E63162BCF6D009243B8 /* BookmarkDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookmarkDetailController.h; path = ../BookmarkDetailController.h; sourceTree = "<group>"; };
+		E8719E64162BCF6D009243B8 /* BookmarkDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarkDetailController.m; path = ../BookmarkDetailController.m; sourceTree = "<group>"; };
+		E8719E65162BCF6D009243B8 /* BookmarkDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookmarkDetailController.xib; path = ../BookmarkDetailController.xib; sourceTree = "<group>"; };
+		E8719E76162C7022009243B8 /* BookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkViewController.h; sourceTree = "<group>"; };
+		E8719E77162C7022009243B8 /* BookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkViewController.m; sourceTree = "<group>"; };
+		E8719E78162C7023009243B8 /* BookmarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookmarkViewController.xib; sourceTree = "<group>"; };
+		E8719E7B162C8175009243B8 /* AddBookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookmarkViewController.h; sourceTree = "<group>"; };
+		E8719E7C162C8175009243B8 /* AddBookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookmarkViewController.m; sourceTree = "<group>"; };
+		E8719E7D162C8175009243B8 /* AddBookmarkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddBookmarkViewController.xib; sourceTree = "<group>"; };
+		E886107D16612B290014650C /* arrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowDown.png; path = icons/arrowDown.png; sourceTree = "<group>"; };
+		E886107E16612B290014650C /* arrowDownGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowDownGreen.png; path = icons/arrowDownGreen.png; sourceTree = "<group>"; };
+		E886107F16612B290014650C /* arrowDownPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowDownPurple.png; path = icons/arrowDownPurple.png; sourceTree = "<group>"; };
+		E886108016612B290014650C /* arrowDownRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowDownRed.png; path = icons/arrowDownRed.png; sourceTree = "<group>"; };
+		E886108116612B290014650C /* arrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowRight.png; path = icons/arrowRight.png; sourceTree = "<group>"; };
+		E886108216612B290014650C /* arrowRightGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowRightGreen.png; path = icons/arrowRightGreen.png; sourceTree = "<group>"; };
+		E886108316612B290014650C /* arrowRightPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowRightPurple.png; path = icons/arrowRightPurple.png; sourceTree = "<group>"; };
+		E886108416612B290014650C /* arrowRightRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrowRightRed.png; path = icons/arrowRightRed.png; sourceTree = "<group>"; };
+		E886108516612B290014650C /* at.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = at.png; path = icons/at.png; sourceTree = "<group>"; };
+		E886108616612B290014650C /* atGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atGreen.png; path = icons/atGreen.png; sourceTree = "<group>"; };
+		E886108716612B290014650C /* atPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atPurple.png; path = icons/atPurple.png; sourceTree = "<group>"; };
+		E886108816612B290014650C /* atRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = atRed.png; path = icons/atRed.png; sourceTree = "<group>"; };
+		E886108916612B290014650C /* targetOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = targetOne.png; path = icons/targetOne.png; sourceTree = "<group>"; };
+		E886108A16612B290014650C /* targetTwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = targetTwo.png; path = icons/targetTwo.png; sourceTree = "<group>"; };
+		E8A75E09164F8DE600068B53 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		E8A75E0B164F8DEC00068B53 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		E8A75EA016593DE400068B53 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		E8A75EA116593DE500068B53 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		E8A75EA216593DE600068B53 /* PageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageViewController.xib; sourceTree = "<group>"; };
+		E8B5C1F01637C96A00CAC3B6 /* AnnotationDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationDetailController.h; sourceTree = "<group>"; };
+		E8B5C1F11637C96A00CAC3B6 /* AnnotationDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationDetailController.m; sourceTree = "<group>"; };
+		E8B5C1F21637C96B00CAC3B6 /* AnnotationDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnnotationDetailController.xib; sourceTree = "<group>"; };
+		E8B5C1FD1638E80800CAC3B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E8C2FF89164BBEEF00CC50C7 /* AnnotationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationDetail.h; sourceTree = "<group>"; };
+		E8C2FF8A164BBEEF00CC50C7 /* AnnotationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationDetail.m; sourceTree = "<group>"; };
+		E8C2FF8C164BBEF000CC50C7 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		E8C2FF8D164BBEF000CC50C7 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		E8DBCBDB1644178900AE462C /* ColorExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorExtention.h; sourceTree = "<group>"; };
+		E8DBCBDC1644178900AE462C /* ColorExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorExtention.m; sourceTree = "<group>"; };
+		E8DBCBE31644358200AE462C /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		E8DBCBE41644358200AE462C /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		E8DBCBE51644358200AE462C /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		E8DBCBE61644358200AE462C /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		E8DBCBE71644358200AE462C /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		E8DBCBE81644358200AE462C /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		E8DBCBE91644358200AE462C /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		E8DBCBEA1644358200AE462C /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		E8DBCBEB1644358200AE462C /* DistancePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		E8DBCBEC1644358200AE462C /* DistancePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		E8DBCBED164435AB00AE462C /* ActionSheetPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
+		E8E40273161736490058C247 /* MapBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E40277161736490058C247 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E8E40279161736490058C247 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E8E4027B161736490058C247 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E8E4027D161736490058C247 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E8E40281161736490058C247 /* Maps-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Maps-Info.plist"; sourceTree = "<group>"; };
+		E8E40283161736490058C247 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8E40285161736490058C247 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8E40287161736490058C247 /* Maps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Maps-Prefix.pch"; sourceTree = "<group>"; };
+		E8E40288161736490058C247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E8E40289161736490058C247 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E8E4028C161736490058C247 /* Maps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Maps.xcdatamodel; sourceTree = "<group>"; };
+		E8E40293161736A60058C247 /* MapBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapBookViewController.h; sourceTree = "<group>"; };
+		E8E40294161736A60058C247 /* MapBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapBookViewController.m; sourceTree = "<group>"; };
+		E8E40295161736A60058C247 /* MapBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapBookViewController.xib; sourceTree = "<group>"; };
+		E8E402CB1617425E0058C247 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8E40270161736490058C247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A75E0C164F8DED00068B53 /* AddressBook.framework in Frameworks */,
+				E8A75E0A164F8DE600068B53 /* AddressBookUI.framework in Frameworks */,
+				E8B5C1FE1638E80800CAC3B6 /* QuartzCore.framework in Frameworks */,
+				E862AF8716252FE00029ADAC /* CoreLocation.framework in Frameworks */,
+				E8E402CC1617425E0058C247 /* MapKit.framework in Frameworks */,
+				E8E40278161736490058C247 /* UIKit.framework in Frameworks */,
+				E8E4027A161736490058C247 /* Foundation.framework in Frameworks */,
+				E8E4027C161736490058C247 /* CoreGraphics.framework in Frameworks */,
+				E8E4027E161736490058C247 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8719E5C162BCE9F009243B8 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				E8719E4B162A8C21009243B8 /* LocationBookmark.h */,
+				E8719E4C162A8C21009243B8 /* LocationBookmark.m */,
+				E8719E4D162A8C21009243B8 /* PathBookmark.h */,
+				E8719E4E162A8C21009243B8 /* PathBookmark.m */,
+				E8719E4F162A8C21009243B8 /* RegionBookmark.h */,
+				E8719E50162A8C21009243B8 /* RagionBookmark.m */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
+		E8719E5D162BCEC1009243B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8E40295161736A60058C247 /* MapBookViewController.xib */,
+				E8719E78162C7023009243B8 /* BookmarkViewController.xib */,
+				E8A75EA216593DE600068B53 /* PageViewController.xib */,
+				E8719E7D162C8175009243B8 /* AddBookmarkViewController.xib */,
+				E8719E65162BCF6D009243B8 /* BookmarkDetailController.xib */,
+				E8B5C1F21637C96B00CAC3B6 /* AnnotationDetailController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E8719E68162BCF8F009243B8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8E40293161736A60058C247 /* MapBookViewController.h */,
+				E8E40294161736A60058C247 /* MapBookViewController.m */,
+				E8719E7B162C8175009243B8 /* AddBookmarkViewController.h */,
+				E8719E7C162C8175009243B8 /* AddBookmarkViewController.m */,
+				E8719E76162C7022009243B8 /* BookmarkViewController.h */,
+				E8719E77162C7022009243B8 /* BookmarkViewController.m */,
+				E8A75EA016593DE400068B53 /* PageViewController.h */,
+				E8A75EA116593DE500068B53 /* PageViewController.m */,
+				E8719E63162BCF6D009243B8 /* BookmarkDetailController.h */,
+				E8719E64162BCF6D009243B8 /* BookmarkDetailController.m */,
+				E8B5C1F01637C96A00CAC3B6 /* AnnotationDetailController.h */,
+				E8B5C1F11637C96A00CAC3B6 /* AnnotationDetailController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E8719E69162BCFB0009243B8 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				E8E4028B161736490058C247 /* Maps.xcdatamodeld */,
+				E8C2FF8C164BBEF000CC50C7 /* MapAnnotation.h */,
+				E8C2FF8D164BBEF000CC50C7 /* MapAnnotation.m */,
+				E8C2FF89164BBEEF00CC50C7 /* AnnotationDetail.h */,
+				E8C2FF8A164BBEEF00CC50C7 /* AnnotationDetail.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		E8A75DBE164E627700068B53 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				E886107D16612B290014650C /* arrowDown.png */,
+				E886107E16612B290014650C /* arrowDownGreen.png */,
+				E886107F16612B290014650C /* arrowDownPurple.png */,
+				E886108016612B290014650C /* arrowDownRed.png */,
+				E886108116612B290014650C /* arrowRight.png */,
+				E886108216612B290014650C /* arrowRightGreen.png */,
+				E886108316612B290014650C /* arrowRightPurple.png */,
+				E886108416612B290014650C /* arrowRightRed.png */,
+				E886108516612B290014650C /* at.png */,
+				E886108616612B290014650C /* atGreen.png */,
+				E886108716612B290014650C /* atPurple.png */,
+				E886108816612B290014650C /* atRed.png */,
+				E886108916612B290014650C /* targetOne.png */,
+				E886108A16612B290014650C /* targetTwo.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
+		E8DBCBE21644357200AE462C /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				E8DBCBE31644358200AE462C /* AbstractActionSheetPicker.h */,
+				E8DBCBE41644358200AE462C /* AbstractActionSheetPicker.m */,
+				E8DBCBE51644358200AE462C /* ActionSheetDatePicker.h */,
+				E8DBCBE61644358200AE462C /* ActionSheetDatePicker.m */,
+				E8DBCBE71644358200AE462C /* ActionSheetDistancePicker.h */,
+				E8DBCBE81644358200AE462C /* ActionSheetDistancePicker.m */,
+				E8DBCBE91644358200AE462C /* ActionSheetStringPicker.h */,
+				E8DBCBEA1644358200AE462C /* ActionSheetStringPicker.m */,
+				E8DBCBEB1644358200AE462C /* DistancePickerView.h */,
+				E8DBCBEC1644358200AE462C /* DistancePickerView.m */,
+			);
+			name = Pickers;
+			sourceTree = "<group>";
+		};
+		E8DBCBEE164435DC00AE462C /* ActionSheet API */ = {
+			isa = PBXGroup;
+			children = (
+				E8DBCBED164435AB00AE462C /* ActionSheetPicker.h */,
+				E8DBCBE21644357200AE462C /* Pickers */,
+			);
+			name = "ActionSheet API";
+			sourceTree = "<group>";
+		};
+		E8E40268161736480058C247 = {
+			isa = PBXGroup;
+			children = (
+				E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */,
+				E8E4027F161736490058C247 /* Maps */,
+				E8E40276161736490058C247 /* Frameworks */,
+				E8E40274161736490058C247 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8E40274161736490058C247 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8E40273161736490058C247 /* MapBook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8E40276161736490058C247 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8A75E0B164F8DEC00068B53 /* AddressBook.framework */,
+				E8A75E09164F8DE600068B53 /* AddressBookUI.framework */,
+				E8B5C1FD1638E80800CAC3B6 /* QuartzCore.framework */,
+				E862AF8616252FE00029ADAC /* CoreLocation.framework */,
+				E8E402CB1617425E0058C247 /* MapKit.framework */,
+				E8E40277161736490058C247 /* UIKit.framework */,
+				E8E40279161736490058C247 /* Foundation.framework */,
+				E8E4027B161736490058C247 /* CoreGraphics.framework */,
+				E8E4027D161736490058C247 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8E4027F161736490058C247 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				E8DBCBEE164435DC00AE462C /* ActionSheet API */,
+				E8DBCBDB1644178900AE462C /* ColorExtention.h */,
+				E8DBCBDC1644178900AE462C /* ColorExtention.m */,
+				E8E40288161736490058C247 /* AppDelegate.h */,
+				E8E40289161736490058C247 /* AppDelegate.m */,
+				E8719E69162BCFB0009243B8 /* DataModel */,
+				E8719E68162BCF8F009243B8 /* Controllers */,
+				E8719E5D162BCEC1009243B8 /* Views */,
+				E8719E5C162BCE9F009243B8 /* Annotations */,
+				E8E40280161736490058C247 /* Supporting Files */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		E8E40280161736490058C247 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8A75DBE164E627700068B53 /* icons */,
+				E8E40281161736490058C247 /* Maps-Info.plist */,
+				E8E40282161736490058C247 /* InfoPlist.strings */,
+				E8E40285161736490058C247 /* main.m */,
+				E8E40287161736490058C247 /* Maps-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8E40272161736490058C247 /* MapBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8E40290161736490058C247 /* Build configuration list for PBXNativeTarget "MapBook" */;
+			buildPhases = (
+				E8E4026F161736490058C247 /* Sources */,
+				E8E40270161736490058C247 /* Frameworks */,
+				E8E40271161736490058C247 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapBook;
+			productName = Maps;
+			productReference = E8E40273161736490058C247 /* MapBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8E4026A161736480058C247 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = PolyU;
+			};
+			buildConfigurationList = E8E4026D161736480058C247 /* Build configuration list for PBXProject "Maps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8E40268161736480058C247;
+			productRefGroup = E8E40274161736490058C247 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8E40272161736490058C247 /* MapBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8E40271161736490058C247 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8E40284161736490058C247 /* InfoPlist.strings in Resources */,
+				E8E40297161736A60058C247 /* MapBookViewController.xib in Resources */,
+				E8719E67162BCF6D009243B8 /* BookmarkDetailController.xib in Resources */,
+				E8719E7A162C7023009243B8 /* BookmarkViewController.xib in Resources */,
+				E8719E7F162C8175009243B8 /* AddBookmarkViewController.xib in Resources */,
+				E8B5C1F41637C96B00CAC3B6 /* AnnotationDetailController.xib in Resources */,
+				E8A75EA416593DE800068B53 /* PageViewController.xib in Resources */,
+				E8C289F6165B6B8700EEC5E1 /* Default-568h@2x.png in Resources */,
+				E886108B16612B290014650C /* arrowDown.png in Resources */,
+				E886108C16612B290014650C /* arrowDownGreen.png in Resources */,
+				E886108D16612B290014650C /* arrowDownPurple.png in Resources */,
+				E886108E16612B290014650C /* arrowDownRed.png in Resources */,
+				E886108F16612B290014650C /* arrowRight.png in Resources */,
+				E886109016612B290014650C /* arrowRightGreen.png in Resources */,
+				E886109116612B290014650C /* arrowRightPurple.png in Resources */,
+				E886109216612B290014650C /* arrowRightRed.png in Resources */,
+				E886109316612B290014650C /* at.png in Resources */,
+				E886109416612B290014650C /* atGreen.png in Resources */,
+				E886109516612B290014650C /* atPurple.png in Resources */,
+				E886109616612B290014650C /* atRed.png in Resources */,
+				E886109716612B290014650C /* targetOne.png in Resources */,
+				E886109816612B290014650C /* targetTwo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8E4026F161736490058C247 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DBCBEF164438FB00AE462C /* AbstractActionSheetPicker.m in Sources */,
+				E8DBCBF0164438FB00AE462C /* ActionSheetDatePicker.m in Sources */,
+				E8DBCBF1164438FB00AE462C /* ActionSheetDistancePicker.m in Sources */,
+				E8DBCBF2164438FB00AE462C /* ActionSheetStringPicker.m in Sources */,
+				E8DBCBF3164438FB00AE462C /* DistancePickerView.m in Sources */,
+				E8AC82301638EEE2007C4EB3 /* AddBookmarkViewController.m in Sources */,
+				E8719E51162B19D4009243B8 /* LocationBookmark.m in Sources */,
+				E8719E52162B19D4009243B8 /* PathBookmark.m in Sources */,
+				E8719E53162B19D4009243B8 /* RagionBookmark.m in Sources */,
+				E8E40286161736490058C247 /* main.m in Sources */,
+				E8E4028A161736490058C247 /* AppDelegate.m in Sources */,
+				E8E4028D161736490058C247 /* Maps.xcdatamodeld in Sources */,
+				E8E40296161736A60058C247 /* MapBookViewController.m in Sources */,
+				E8719E66162BCF6D009243B8 /* BookmarkDetailController.m in Sources */,
+				E8719E79162C7023009243B8 /* BookmarkViewController.m in Sources */,
+				E8B5C1F31637C96B00CAC3B6 /* AnnotationDetailController.m in Sources */,
+				E8DBCBDD1644178900AE462C /* ColorExtention.m in Sources */,
+				E8C2FF8B164BBEEF00CC50C7 /* AnnotationDetail.m in Sources */,
+				E8C2FF8E164BBEF000CC50C7 /* MapAnnotation.m in Sources */,
+				E8A75EA316593DE800068B53 /* PageViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E8E40282161736490058C247 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8E40283161736490058C247 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8E4028E161736490058C247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E8E4028F161736490058C247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8E40291161736490058C247 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Maps/Maps-Prefix.pch";
+				INFOPLIST_FILE = "Maps/Maps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E8E40292161736490058C247 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Maps/Maps-Prefix.pch";
+				INFOPLIST_FILE = "Maps/Maps-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8E4026D161736480058C247 /* Build configuration list for PBXProject "Maps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E4028E161736490058C247 /* Debug */,
+				E8E4028F161736490058C247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8E40290161736490058C247 /* Build configuration list for PBXNativeTarget "MapBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8E40291161736490058C247 /* Debug */,
+				E8E40292161736490058C247 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E8E4028B161736490058C247 /* Maps.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E8E4028C161736490058C247 /* Maps.xcdatamodel */,
+			);
+			currentVersion = E8E4028C161736490058C247 /* Maps.xcdatamodel */;
+			path = Maps.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E8E4026A161736480058C247 /* Project object */;
+}
