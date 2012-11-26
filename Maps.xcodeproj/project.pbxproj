@@ -32,9 +32,6 @@
 		E8A75E0C164F8DED00068B53 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8A75E0B164F8DEC00068B53 /* AddressBook.framework */; };
 		E8B5C1FE1638E80800CAC3B6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8B5C1FD1638E80800CAC3B6 /* QuartzCore.framework */; };
 		E8C289F6165B6B8700EEC5E1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */; };
-		E8C2FF8B164BBEEF00CC50C7 /* AnnotationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C2FF8A164BBEEF00CC50C7 /* AnnotationDetail.m */; };
-		E8C2FF8E164BBEF000CC50C7 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C2FF8D164BBEF000CC50C7 /* MapAnnotation.m */; };
-		E8DBCBDD1644178900AE462C /* ColorExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DBCBDC1644178900AE462C /* ColorExtention.m */; };
 		E8E40278161736490058C247 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E40277161736490058C247 /* UIKit.framework */; };
 		E8E4027A161736490058C247 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E40279161736490058C247 /* Foundation.framework */; };
 		E8E4027C161736490058C247 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E4027B161736490058C247 /* CoreGraphics.framework */; };
@@ -97,16 +94,16 @@
 		E8A061CE16636F9F00EC937C /* PathBookmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PathBookmark.m; path = Annotations/PathBookmark.m; sourceTree = "<group>"; };
 		E8A061CF16636F9F00EC937C /* RagionBookmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RagionBookmark.m; path = Annotations/RagionBookmark.m; sourceTree = "<group>"; };
 		E8A061D016636F9F00EC937C /* RegionBookmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegionBookmark.h; path = Annotations/RegionBookmark.h; sourceTree = "<group>"; };
+		E8A061D21663709200EC937C /* ColorExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorExtention.h; path = Colors/ColorExtention.h; sourceTree = "<group>"; };
+		E8A061D31663709200EC937C /* ColorExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ColorExtention.m; path = Colors/ColorExtention.m; sourceTree = "<group>"; };
+		E8A061D4166370AC00EC937C /* AnnotationDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnnotationDetail.h; path = DataModel/AnnotationDetail.h; sourceTree = "<group>"; };
+		E8A061D5166370AC00EC937C /* AnnotationDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AnnotationDetail.m; path = DataModel/AnnotationDetail.m; sourceTree = "<group>"; };
+		E8A061D6166370AC00EC937C /* MapAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MapAnnotation.h; path = DataModel/MapAnnotation.h; sourceTree = "<group>"; };
+		E8A061D7166370AC00EC937C /* MapAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MapAnnotation.m; path = DataModel/MapAnnotation.m; sourceTree = "<group>"; };
 		E8A75E09164F8DE600068B53 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		E8A75E0B164F8DEC00068B53 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E8B5C1FD1638E80800CAC3B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E8C2FF89164BBEEF00CC50C7 /* AnnotationDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationDetail.h; sourceTree = "<group>"; };
-		E8C2FF8A164BBEEF00CC50C7 /* AnnotationDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationDetail.m; sourceTree = "<group>"; };
-		E8C2FF8C164BBEF000CC50C7 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
-		E8C2FF8D164BBEF000CC50C7 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
-		E8DBCBDB1644178900AE462C /* ColorExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorExtention.h; sourceTree = "<group>"; };
-		E8DBCBDC1644178900AE462C /* ColorExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorExtention.m; sourceTree = "<group>"; };
 		E8E40273161736490058C247 /* MapBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E40277161736490058C247 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E8E40279161736490058C247 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -191,12 +188,21 @@
 			isa = PBXGroup;
 			children = (
 				E8E4028B161736490058C247 /* Maps.xcdatamodeld */,
-				E8C2FF8C164BBEF000CC50C7 /* MapAnnotation.h */,
-				E8C2FF8D164BBEF000CC50C7 /* MapAnnotation.m */,
-				E8C2FF89164BBEEF00CC50C7 /* AnnotationDetail.h */,
-				E8C2FF8A164BBEEF00CC50C7 /* AnnotationDetail.m */,
+				E8A061D4166370AC00EC937C /* AnnotationDetail.h */,
+				E8A061D5166370AC00EC937C /* AnnotationDetail.m */,
+				E8A061D6166370AC00EC937C /* MapAnnotation.h */,
+				E8A061D7166370AC00EC937C /* MapAnnotation.m */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		E8A061D11663707E00EC937C /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				E8A061D21663709200EC937C /* ColorExtention.h */,
+				E8A061D31663709200EC937C /* ColorExtention.m */,
+			);
+			name = Colors;
 			sourceTree = "<group>";
 		};
 		E8A75DBE164E627700068B53 /* icons */ = {
@@ -283,11 +289,10 @@
 		E8E4027F161736490058C247 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				E8DBCBEE164435DC00AE462C /* ActionSheet API */,
-				E8DBCBDB1644178900AE462C /* ColorExtention.h */,
-				E8DBCBDC1644178900AE462C /* ColorExtention.m */,
 				E8E40288161736490058C247 /* AppDelegate.h */,
 				E8E40289161736490058C247 /* AppDelegate.m */,
+				E8A061D11663707E00EC937C /* Colors */,
+				E8DBCBEE164435DC00AE462C /* ActionSheet API */,
 				E8719E69162BCFB0009243B8 /* DataModel */,
 				E8719E68162BCF8F009243B8 /* Controllers */,
 				E8719E5D162BCEC1009243B8 /* Views */,
@@ -395,9 +400,6 @@
 				E8E40286161736490058C247 /* main.m in Sources */,
 				E8E4028A161736490058C247 /* AppDelegate.m in Sources */,
 				E8E4028D161736490058C247 /* Maps.xcdatamodeld in Sources */,
-				E8DBCBDD1644178900AE462C /* ColorExtention.m in Sources */,
-				E8C2FF8B164BBEEF00CC50C7 /* AnnotationDetail.m in Sources */,
-				E8C2FF8E164BBEF000CC50C7 /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
