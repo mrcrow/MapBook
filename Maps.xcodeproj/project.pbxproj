@@ -39,8 +39,25 @@
 		E8E40284161736490058C247 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8E40282161736490058C247 /* InfoPlist.strings */; };
 		E8E40286161736490058C247 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E40285161736490058C247 /* main.m */; };
 		E8E4028A161736490058C247 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E40289161736490058C247 /* AppDelegate.m */; };
-		E8E4028D161736490058C247 /* Maps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8E4028B161736490058C247 /* Maps.xcdatamodeld */; };
 		E8E402CC1617425E0058C247 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E402CB1617425E0058C247 /* MapKit.framework */; };
+		E8E63DFD1664581B00869121 /* ColorExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061D31663709200EC937C /* ColorExtention.m */; };
+		E8E63DFE1664581B00869121 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061A916636EFC00EC937C /* AbstractActionSheetPicker.m */; };
+		E8E63DFF1664581B00869121 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061AB16636EFC00EC937C /* ActionSheetDatePicker.m */; };
+		E8E63E001664581B00869121 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061AD16636EFC00EC937C /* ActionSheetDistancePicker.m */; };
+		E8E63E011664581B00869121 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061B016636EFC00EC937C /* ActionSheetStringPicker.m */; };
+		E8E63E021664581B00869121 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061B216636EFC00EC937C /* DistancePickerView.m */; };
+		E8E63E041664581B00869121 /* AnnotationDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061D5166370AC00EC937C /* AnnotationDetail.m */; };
+		E8E63E051664581B00869121 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061D7166370AC00EC937C /* MapAnnotation.m */; };
+		E8E63E061664581B00869121 /* AddBookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061B416636F6200EC937C /* AddBookmarkViewController.m */; };
+		E8E63E071664581B00869121 /* AnnotationDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061B616636F6200EC937C /* AnnotationDetailController.m */; };
+		E8E63E081664581B00869121 /* BookmarkDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061B816636F6200EC937C /* BookmarkDetailController.m */; };
+		E8E63E091664581B00869121 /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061BA16636F6200EC937C /* BookmarkViewController.m */; };
+		E8E63E0A1664581B00869121 /* MapBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061BC16636F6200EC937C /* MapBookViewController.m */; };
+		E8E63E0B1664581B00869121 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061BE16636F6200EC937C /* PageViewController.m */; };
+		E8E63E0C1664581B00869121 /* LocationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061CC16636F9F00EC937C /* LocationBookmark.m */; };
+		E8E63E0D1664581B00869121 /* PathBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061CE16636F9F00EC937C /* PathBookmark.m */; };
+		E8E63E0E1664581B00869121 /* RagionBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A061CF16636F9F00EC937C /* RagionBookmark.m */; };
+		E8E63E111664585800869121 /* Maps.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8E63E0F1664585800869121 /* Maps.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,8 +132,8 @@
 		E8E40287161736490058C247 /* Maps-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Maps-Prefix.pch"; sourceTree = "<group>"; };
 		E8E40288161736490058C247 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8E40289161736490058C247 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8E4028C161736490058C247 /* Maps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Maps.xcdatamodel; sourceTree = "<group>"; };
 		E8E402CB1617425E0058C247 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E8E63E101664585800869121 /* Maps.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Maps.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +204,7 @@
 		E8719E69162BCFB0009243B8 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				E8E4028B161736490058C247 /* Maps.xcdatamodeld */,
+				E8E63E0F1664585800869121 /* Maps.xcdatamodeld */,
 				E8A061D4166370AC00EC937C /* AnnotationDetail.h */,
 				E8A061D5166370AC00EC937C /* AnnotationDetail.m */,
 				E8A061D6166370AC00EC937C /* MapAnnotation.h */,
@@ -397,9 +414,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E63DFD1664581B00869121 /* ColorExtention.m in Sources */,
+				E8E63DFE1664581B00869121 /* AbstractActionSheetPicker.m in Sources */,
+				E8E63DFF1664581B00869121 /* ActionSheetDatePicker.m in Sources */,
+				E8E63E001664581B00869121 /* ActionSheetDistancePicker.m in Sources */,
+				E8E63E011664581B00869121 /* ActionSheetStringPicker.m in Sources */,
+				E8E63E021664581B00869121 /* DistancePickerView.m in Sources */,
+				E8E63E041664581B00869121 /* AnnotationDetail.m in Sources */,
+				E8E63E051664581B00869121 /* MapAnnotation.m in Sources */,
+				E8E63E061664581B00869121 /* AddBookmarkViewController.m in Sources */,
+				E8E63E071664581B00869121 /* AnnotationDetailController.m in Sources */,
+				E8E63E081664581B00869121 /* BookmarkDetailController.m in Sources */,
+				E8E63E091664581B00869121 /* BookmarkViewController.m in Sources */,
+				E8E63E0A1664581B00869121 /* MapBookViewController.m in Sources */,
+				E8E63E0B1664581B00869121 /* PageViewController.m in Sources */,
+				E8E63E0C1664581B00869121 /* LocationBookmark.m in Sources */,
+				E8E63E0D1664581B00869121 /* PathBookmark.m in Sources */,
+				E8E63E0E1664581B00869121 /* RagionBookmark.m in Sources */,
 				E8E40286161736490058C247 /* main.m in Sources */,
 				E8E4028A161736490058C247 /* AppDelegate.m in Sources */,
-				E8E4028D161736490058C247 /* Maps.xcdatamodeld in Sources */,
+				E8E63E111664585800869121 /* Maps.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,13 +542,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E8E4028B161736490058C247 /* Maps.xcdatamodeld */ = {
+		E8E63E0F1664585800869121 /* Maps.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E8E4028C161736490058C247 /* Maps.xcdatamodel */,
+				E8E63E101664585800869121 /* Maps.xcdatamodel */,
 			);
-			currentVersion = E8E4028C161736490058C247 /* Maps.xcdatamodel */;
-			path = Maps.xcdatamodeld;
+			currentVersion = E8E63E101664585800869121 /* Maps.xcdatamodel */;
+			name = Maps.xcdatamodeld;
+			path = DataModel/Maps.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
