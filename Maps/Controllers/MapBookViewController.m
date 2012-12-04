@@ -761,8 +761,6 @@
     }
 }
 
-#warning manage right accesery view
-
 - (NSString *)annotationIDFromAnnotationView:(MKAnnotationView *)view
 {
     if ([view.annotation isKindOfClass:[LocationBookmark class]]) {
@@ -776,6 +774,8 @@
         return mark.annotID;
     }
 }
+
+#warning manage right accesery view
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {

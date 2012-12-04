@@ -263,7 +263,7 @@
     [self setManagedObjectContext:nil];
 }
 
-#pragma mark - Table View Data Source
+#pragma mark - UITableView Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -390,6 +390,11 @@
 }
 
 #pragma mark - TextView Delegate Method 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
 
 - (BOOL)enableEnterKeyForTextView:(UITextView *)view
 {
@@ -744,7 +749,7 @@
     return nil;
 }
 
-#pragma mark - Table View Delegate
+#pragma mark - Date Selection
 
 - (void)timeWasSelected:(NSDate *)selectedDate
 {
