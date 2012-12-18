@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AnnotationDetail.h"
+#import "MapAnnotation.h"
 
 @interface AnnotationDetailController : UITableViewController
 
-@property (strong, nonatomic) id object;
+@property (strong, nonatomic) MapAnnotation *detail;
 
 @end

@@ -13,7 +13,7 @@
 @end
 
 @implementation AnnotationDetailController
-@synthesize object = _object;
+@synthesize detail = _detail;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,10 +24,11 @@
     return self;
 }
 
-- (void)setObject:(id)newObject
+- (void)setDetail:(AnnotationDetail *)detail
 {
-    if (self.object != newObject) {
-        self.object = newObject;
+    if (_detail != detail)
+    {
+        _detail = detail;
         [self.tableView reloadData];
     }
 }

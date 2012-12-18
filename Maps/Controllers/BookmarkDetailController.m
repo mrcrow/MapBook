@@ -16,7 +16,7 @@
 @end
 
 @implementation BookmarkDetailController
-@synthesize object = _object;
+@synthesize detail = _detail;
 
 @synthesize mapView = _mapView;
 @synthesize bookmarkType;
@@ -31,10 +31,11 @@
     return self;
 }
 
-- (void)setObject:(AnnotationDetail *)object
+- (void)setDetail:(AnnotationDetail *)detail
 {
-    if (_object != object) {
-        _object = object;
+    if (_detail != detail)
+    {
+        _detail = detail;
         [self.tableView reloadData];
     }
 }
@@ -53,7 +54,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [self setObject:nil];
+    [self setDetail:nil];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -77,119 +78,19 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (!cell) {
+    if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     // Configure the cell...
-    cell.textLabel.text = self.object.title;
-    cell.detailTextLabel.text = self.object.story;
+    //cell.textLabel.text = self.detail.title;
+    //cell.detailTextLabel.text = self.detail.story;
     return cell;
 }
 
 #pragma mark - TableViewCell Styles
-
-/*
-- (UITableViewCell *)cellForMapView
-{    
-    static NSString * cellID = @"MapCell";
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
-    
-    if (!self.mapView) {
-        CGFloat cellWidth = self.view.bounds.size.width - 20;
-        self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, cellWidth, 240)]; //map height
-        [_mapView setDelegate:self];
-        _mapView.layer.masksToBounds = YES;
-        _mapView.layer.cornerRadius = 10.0;
-        _mapView.mapType = MKMapTypeStandard;
-        [_mapView setScrollEnabled:NO];
-        
-        // add a pin using self as the object implementing the MKAnnotation protocol
-        switch (self.bookmarkType) {
-            case 1: {
-                MKPointAnnotation *location = (MKPointAnnotation *)overlayObject;
-                [_mapView addAnnotation:location];
-                
-                MKCoordinateRegion area = MKCoordinateRegionMakeWithDistance(location.coordinate, 200, 200);
-                [_mapView setRegion:area animated:YES];
-            } break;
-                
-            case 2: {
-                MKPolyline *path = (MKPolyline *)overlayObject;
-                [_mapView addOverlay:path];
-                MKCoordinateRegion area = MKCoordinateRegionForMapRect(path.boundingMapRect);
-                [_mapView setRegion:area animated:YES];
-            } break;
-                
-            default: {
-                MKPolygon *region = (MKPolygon *)overlayObject;
-                [_mapView addOverlay:region];
-                MKCoordinateRegion area = MKCoordinateRegionForMapRect(region.boundingMapRect);
-                [_mapView setRegion:area animated:YES];
-            } break;
-        }
-        
-    }
-    
-    [cell.contentView addSubview:self.mapView];
-    return cell;
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
-        return nil;
-    }
-    
-    if ([annotation isKindOfClass:[MKPointAnnotation class]]) 
-    {
-        static NSString *locationAnnotationIdentifier = @"LocationPinAnnotationIdentifier";
-        MKPinAnnotationView *pinView = (MKPinAnnotationView *)
-        [mapView dequeueReusableAnnotationViewWithIdentifier:locationAnnotationIdentifier];
-        
-        if (!pinView)
-        {
-            // if an existing pin view was not available, create one
-            MKPinAnnotationView *customPinView = [[MKPinAnnotationView alloc]
-                                                  initWithAnnotation:annotation reuseIdentifier:locationAnnotationIdentifier];
-            customPinView.pinColor = MKPinAnnotationColorRed;
-            customPinView.animatesDrop = NO;
-            customPinView.canShowCallout = YES;
-            
-            return customPinView;
-        }
-        else
-        {
-            pinView.annotation = annotation;
-        }
-        return pinView;
-    }
-    
-    return nil;
-}
-
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
-{
-    if ([overlay isKindOfClass:[MKPolygon class]]) {
-        MKPolygon *polgon = overlay;
-        MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:polgon];
-        polygonView.fillColor = [UIColor regionBookmarkFillColor];
-        polygonView.strokeColor = [UIColor regionBookmarkStrokeColor];
-        polygonView.lineWidth = 8.0;
-        return polygonView;
-    } 
-    
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
-        MKPolyline *polyline = overlay;
-        MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:polyline];
-        polylineView.fillColor = [UIColor pathBookmarkFillColor];
-        polylineView.strokeColor = [UIColor pathBookmarkStrokeColor];
-        polylineView.lineWidth = 8.0;
-        return polylineView;
-    } 
-    return nil;
-}*/
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

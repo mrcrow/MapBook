@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "AnnotationDetail.h"
+#import "MapAnnotation.h"
 
 @interface BookmarkDetailController : UITableViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) AnnotationDetail *object;
+@property (strong, nonatomic) MapAnnotation *detail;
 
 @end

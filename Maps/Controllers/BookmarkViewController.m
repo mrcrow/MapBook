@@ -104,7 +104,8 @@
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
-    switch (self.sortType) {
+    switch (self.sortType)
+    {
         case FetchResultsDate: {
             // Edit the sort key as appropriate.
             NSLog(@"date");
@@ -137,7 +138,8 @@
     }
 
 	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
+	if (![self.fetchedResultsController performFetch:&error])
+    {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -147,7 +149,8 @@
 
 - (NSString *)sectionTitle:(NSString *)string
 {
-    switch (self.sortType) {
+    switch (self.sortType)
+    {
         case 0: {
             return string;
         } break;
@@ -199,7 +202,8 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
@@ -217,10 +221,12 @@
         
     NSString *title;
     //manage the cell here...
-    if (self.sortType != FetchResultsDate) {
+    if (self.sortType != FetchResultsDate)
+    {
         title = object.day;
     } else {
-        switch ([object.annoType intValue]) {
+        switch ([object.annoType intValue])
+        {
             case AnnotationLocation: {
                 title = @"Location Bookmark";
             } break;
@@ -235,9 +241,12 @@
         }
     }
     
-    if ([object.annoType intValue] != AnnotationPath) {
+    if ([object.annoType intValue] != AnnotationPath)
+    {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\n%@", title, object.locationName];
-    } else {
+    }
+    else
+    {
         NSArray *strings = [object.locationName componentsSeparatedByString:@"/"];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@\nFrom %@ To %@", title, [strings objectAtIndex:0], [strings objectAtIndex:1]];
     }
@@ -251,7 +260,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         MapAnnotation *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [context deleteObject:object];
@@ -259,7 +269,8 @@
         [delegate bookmarkViewController:self didRemoveBookmarkObjectID:object.annoID];
         
         NSError *error = nil;
-        if (![context save:&error]) {
+        if (![context save:&error])
+        {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -334,10 +345,11 @@
     //push detailViewController here...
     MapAnnotation *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     AnnotationDetail *detail = object.detail;
-    if (!self.detailViewController) {
+    if (!self.detailViewController)
+    {
         self.detailViewController = [[BookmarkDetailController alloc] initWithNibName:@"BookmarkDetailController" bundle:nil];
     }
-    [detailViewController setObject:detail];
+    [detailViewController setDetail:object];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 

@@ -62,7 +62,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil 
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
         self.title = NSLocalizedString(@"Bookmark", @"Bookmark");
     }
@@ -161,10 +162,12 @@
             MKPolyline *annot = (MKPolyline *)overlayObject;
             
             //create two pins for PathBookmark
-            for (int i = 0; i < 2; i ++) {
+            for (int i = 0; i < 2; i ++)
+            {
                 CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([[locationInfo objectAtIndex:i] CGPointValue].x, [[locationInfo objectAtIndex:i] CGPointValue].y);
                 //CLLocationCoordinate2D coord = [[locationInfo objectAtIndex:i] MKCoordinateValue];
-                switch (i) {
+                switch (i)
+                {
                     case 0: {
                         NSString *position = _locationFromField.text;
                         PathBookmark *mark = [[PathBookmark alloc] initWithPolyline:annot coordinate:coord objectID:idString activity:mapObject.activity position:position];
@@ -208,7 +211,8 @@
     
     //Save
     NSError *error = nil;
-    if (![context save:&error]) {
+    if (![context save:&error])
+    {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -285,7 +289,8 @@
                   [NSNumber numberWithInt:1],   //Location
                   nil];
     } 
-    else {
+    else
+    {
         counts = [NSArray arrayWithObjects:
                   [NSNumber numberWithInt:1],   //Title
                   [NSNumber numberWithInt:1],   //Content
@@ -301,7 +306,8 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSArray *titles;
-    if (self.bookmarkType != BookmarkPath) {
+    if (self.bookmarkType != BookmarkPath)
+    {
         titles = [NSArray arrayWithObjects:
                   @"",                         
                   @"Content",               
@@ -310,7 +316,9 @@
                   @"",                     
                   @"",                  
                   nil];
-    } else {
+    }
+    else
+    {
         titles = [NSArray arrayWithObjects:
                   @"",                         
                   @"Content",                          
@@ -326,15 +334,19 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {   
-    if (section == 1) {
+    if (section == 1)
+    {
         return @"Enter the ending symbols (e.g. '. ! ?') can help you to start a new paragraph.";
     } 
 
     if (section == 5) 
     {
-        if (self.bookmarkType != BookmarkPath) {
+        if (self.bookmarkType != BookmarkPath)
+        {
             return @"Select the 'Coordinate' cell can fill the 'Location' cell with default address";
-        } else {
+        }
+        else
+        {
             return @"Select the 'Coordinates' cells can fill the 'Locations' cells with default address";
         }
     } 
@@ -391,10 +403,11 @@
 
 #pragma mark - TextView Delegate Method 
 
+/*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.view endEditing:YES];
-}
+}*/
 
 - (BOOL)enableEnterKeyForTextView:(UITextView *)view
 {
@@ -611,15 +624,18 @@
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {    
     //if the textfield is empty, the white space is not allowed
-    if ([textField.text length] == 0) {
-        if ([string isEqualToString:@" "]) {
+    if ([textField.text length] == 0)
+    {
+        if ([string isEqualToString:@" "])
+        {
             return NO;
         }
     }
     return YES;
 }
 
-- (void)textFieldFinished:(id)sender {
+- (void)textFieldFinished:(id)sender
+{
     [sender resignFirstResponder];
 }
 
@@ -653,7 +669,8 @@
     static NSString * cellID = @"MapCell";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellID];
     
-    if (!self.mapView) {
+    if (!self.mapView)
+    {
         CGFloat cellWidth = self.view.bounds.size.width - 20;
         self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, cellWidth, 240)]; //map height
         [_mapView setDelegate:self];
@@ -696,7 +713,8 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+    {
         return nil;
     }
     
@@ -729,7 +747,8 @@
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
-    if ([overlay isKindOfClass:[MKPolygon class]]) {
+    if ([overlay isKindOfClass:[MKPolygon class]])
+    {
         MKPolygon *polgon = overlay;
         MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:polgon];
         polygonView.fillColor = [UIColor regionBookmarkFillColor];
@@ -738,7 +757,8 @@
         return polygonView;
     } 
     
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
+    if ([overlay isKindOfClass:[MKPolyline class]])
+    {
         MKPolyline *polyline = overlay;
         MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:polyline];
         polylineView.fillColor = [UIColor pathBookmarkFillColor];

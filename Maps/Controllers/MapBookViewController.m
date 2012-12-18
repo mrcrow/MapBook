@@ -120,14 +120,16 @@
 {
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView removeAnnotations:self.mapView.annotations];
-    for (MapAnnotation *object in self.fetchedResultsController.fetchedObjects) {
+    for (MapAnnotation *object in self.fetchedResultsController.fetchedObjects)
+    {
         [self createAnnotation:object];
     }
 }
 
 - (void)createAnnotation:(MapAnnotation *)object
 {
-    switch ([object.annoType intValue]) {
+    switch ([object.annoType intValue])
+    {
         case 1: {
             //point annotation
             CGPoint point = [[[NSKeyedUnarchiver unarchiveObjectWithData:object.coordinatePoints] objectAtIndex:0] CGPointValue];
@@ -149,13 +151,17 @@
             
             NSArray *positions = [object.locationName componentsSeparatedByString:@"/"];
                     
-            for (int i = 0; i < 2; i ++) {
-                if (i == 0) {
+            for (int i = 0; i < 2; i ++)
+            {
+                if (i == 0)
+                {
                     CLLocationCoordinate2D start = CLLocationCoordinate2DMake([[points objectAtIndex:0] CGPointValue].x, [[points objectAtIndex:0] CGPointValue].y);
                     NSString *position = [NSString stringWithFormat:@"Start at %@", [positions objectAtIndex:0]];
                     PathBookmark *mark = [[PathBookmark alloc] initWithPolyline:path coordinate:start objectID:object.annoID activity:object.activity position:position];
                     [self.mapView addAnnotation:mark];
-                } else {
+                }
+                else
+                {
                     CLLocationCoordinate2D end = CLLocationCoordinate2DMake([[points lastObject] CGPointValue].x, [[points lastObject] CGPointValue].y);
                      NSString *position = [NSString stringWithFormat:@"Finished at %@", [positions objectAtIndex:1]];
                     PathBookmark *mark = [[PathBookmark alloc] initWithPolyline:path coordinate:end objectID:object.annoID activity:object.activity position:position];
@@ -215,7 +221,8 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (__fetchedResultsController) {
+    if (__fetchedResultsController)
+    {
         return __fetchedResultsController;
     }
     
@@ -238,7 +245,8 @@
     self.fetchedResultsController = aFetchedResultsController;
     
 	NSError *error = nil;
-	if (![self.fetchedResultsController performFetch:&error]) {
+	if (![self.fetchedResultsController performFetch:&error])
+    {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
@@ -265,7 +273,8 @@
 
 - (void)showOverlayList
 {
-    if (!self.overlayListViewController) {
+    if (!self.overlayListViewController)
+    {
         BookmarkViewController *bookViewController = [[BookmarkViewController alloc] initWithNibName:@"BookmarkViewController" bundle:nil];
         bookViewController.delegate = self;
         bookViewController.managedObjectContext = self.managedObjectContext;
@@ -277,9 +286,12 @@
 
 - (void)noteCancel
 {
-    if ([userInputAnnotations count] == 0) {
+    if ([userInputAnnotations count] == 0)
+    {
         [self barTransformBackToNormalStyle];
-    } else {
+    }
+    else
+    {
         if (!self.cancelActionSheet) 
         {
             self.cancelActionSheet = [[UIActionSheet alloc] initWithTitle:@"Bookmark is not saved" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save" otherButtonTitles:@"Don't save", nil];
@@ -296,8 +308,10 @@
     
     //NSValue *point = [NSValue valueWithMKCoordinate:mapCenterCoordinate];
     
-    if ([userInputPoints indexOfObject:point inRange:NSMakeRange(0, [userInputPoints count])] == NSNotFound) {
-        if (self.inputMode == UserInputLocation) {
+    if ([userInputPoints indexOfObject:point inRange:NSMakeRange(0, [userInputPoints count])] == NSNotFound)
+    {
+        if (self.inputMode == UserInputLocation)
+        {
             [self noteRemoveLastAnnotationFromMapView];
         }
         
@@ -316,12 +330,14 @@
 
 - (void)noteRemoveLastAnnotationFromMapView
 {
-    if ([userInputAnnotations count] != 0) {
+    if ([userInputAnnotations count] != 0)
+    {
         MKPointAnnotation *pin = [userInputAnnotations lastObject];
         [userInputAnnotations removeLastObject];
         [userInputPoints removeLastObject];
         [self.mapView removeAnnotation:pin];
-        if (self.inputMode != UserInputLocation) {
+        if (self.inputMode != UserInputLocation)
+        {
             [self.mapView setCenterCoordinate:pin.coordinate animated:YES];
         }
     }
@@ -383,7 +399,8 @@
 
 - (id <MKAnnotation>)convertPointsToAnnotation
 {
-    switch (self.inputMode) {
+    switch (self.inputMode)
+    {
         case UserInputLocation: {
             CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([[userInputPoints lastObject] CGPointValue].x, [[userInputPoints lastObject] CGPointValue].y);
             //CLLocationCoordinate2D coord = [[userInputPoints lastObject] MKCoordinateValue];
@@ -462,19 +479,23 @@
     }
     
     if (actionSheet == self.cancelActionSheet) {
-        switch (buttonIndex) {
-            case 0: {
+        switch (buttonIndex)
+        {
+            case 0:
+            {
                 [self noteSave];
                 [self barTransformBackToNormalStyle];
                 [self clearMapViewAnnotations];
             } break;
                 
-            case 1: {
+            case 1:
+            {
                 [self barTransformBackToNormalStyle];
                 [self clearMapViewAnnotations];
             } break;
                 
-            default: {
+            default:
+            {
                 //do nothing
             } break;
         }
@@ -779,13 +800,16 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    switch (control.tag) {
-        case 0: {
+    switch (control.tag)
+    {
+        case 0:
+        {
             MKCoordinateRegion region = [self zoomIntoAnnotationView:view];
             [_mapView setRegion:region animated:YES];
         } break;
             
-        default: {
+        default:
+        {
             // "Right Accessory Button Tapped 
             // Fetch the object 
             NSManagedObjectContext *context = self.managedObjectContext;
@@ -797,19 +821,21 @@
             [request setPredicate:predicate];
             
             NSError *error = nil;
-            NSArray *fetchResult = [context executeFetchRequest:request error:&error];
+            NSArray *result = [context executeFetchRequest:request error:&error];
             
-            if (error) {
+            if (error)
+            {
                 NSLog(@"%@: Error fetching context: %@", [self class], [error localizedDescription]);
-                NSLog(@"entitiesArray: %@",fetchResult);
+                NSLog(@"entitiesArray: %@",result);
                 return;
             }
             
-            MapAnnotation *object = [fetchResult objectAtIndex:0];
-            if (!self.annotationController) {
+            MapAnnotation *object = [result lastObject];
+            if (!self.annotationController)
+            {
                 self.annotationController = [[AnnotationDetailController alloc] initWithNibName:@"AnnotationDetailController" bundle:nil];
             }
-            annotationController.object = object;
+            annotationController.detail = object;
             [self.navigationController pushViewController:annotationController animated:YES];
             
         } break;
@@ -818,7 +844,8 @@
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
-    if ([overlay isKindOfClass:[MKPolygon class]]) {
+    if ([overlay isKindOfClass:[MKPolygon class]])
+    {
         MKPolygon *polgon = overlay;
         MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:polgon];
         polygonView.fillColor = [UIColor regionBookmarkFillColor];
@@ -827,7 +854,8 @@
         return polygonView;
     } 
     
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
+    if ([overlay isKindOfClass:[MKPolyline class]])
+    {
         MKPolyline *polyline = overlay;
         MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:polyline];
         polylineView.fillColor = [UIColor pathBookmarkFillColor];
@@ -876,23 +904,31 @@
 
 - (void)bookmarkViewController:(BookmarkViewController *)controller didMapViewFocusOnBookmarkObjectID:(NSString *)objectID
 {
-    for (id <MKAnnotation> object in self.mapView.annotations) {
-        if ([object isKindOfClass:[LocationBookmark class]]) {
+    for (id <MKAnnotation> object in self.mapView.annotations)
+    {
+        if ([object isKindOfClass:[LocationBookmark class]])
+        {
             LocationBookmark *mark = (LocationBookmark *)object;
-            if (mark.annotID == objectID) {
+            if (mark.annotID == objectID)
+            {
                 MKCoordinateRegion area = MKCoordinateRegionMakeWithDistance(mark.coordinate, 200, 200);
                 [_mapView setRegion:area animated:YES];
                 [self.mapView selectAnnotation:mark animated:YES];
             }
-        } else if ([object isKindOfClass:[PathBookmark class]]) {
+        }
+        else if ([object isKindOfClass:[PathBookmark class]])
+        {
             PathBookmark *mark = (PathBookmark *)object;
-            if (mark.annotID == objectID) {
+            if (mark.annotID == objectID)
+            {
                 MKCoordinateRegion area = MKCoordinateRegionForMapRect(mark.path.boundingMapRect);
                 [_mapView setRegion:area animated:YES];
                 [self.mapView selectAnnotation:mark animated:YES];
                 break;
             }
-        } else {
+        }
+        else
+        {
             RegionBookmark *mark = (RegionBookmark *)object;
             if (mark.annotID == objectID) {
                 MKCoordinateRegion area = MKCoordinateRegionForMapRect(mark.region.boundingMapRect);
@@ -905,20 +941,26 @@
 
 - (void)bookmarkViewController:(BookmarkViewController *)controller didRemoveBookmarkObjectID:(NSString *)objectID
 {
-    for (id <MKAnnotation> object in self.mapView.annotations) {
-        if ([object isKindOfClass:[LocationBookmark class]]) {
+    for (id <MKAnnotation> object in self.mapView.annotations)
+    {
+        if ([object isKindOfClass:[LocationBookmark class]])
+        {
             LocationBookmark *mark = (LocationBookmark *)object;
-            if (mark.annotID == objectID) {
+            if (mark.annotID == objectID)
+            {
                 [self.mapView removeAnnotation:object];
             }
-        } else if ([object isKindOfClass:[PathBookmark class]]) {
+        } else if ([object isKindOfClass:[PathBookmark class]])
+        {
             PathBookmark *mark = (PathBookmark *)object;
-            if (mark.annotID == objectID) {
+            if (mark.annotID == objectID)
+            {
                 [self.mapView removeAnnotation:object];
             }
         } else {
             RegionBookmark *mark = (RegionBookmark *)object;
-            if (mark.annotID == objectID) {
+            if (mark.annotID == objectID)
+            {
                 [self.mapView removeAnnotation:object];
             }
         }
@@ -929,14 +971,16 @@
 
 - (void)addBookmarkViewController:(AddBookmarkViewController *)controller rootViewNavigationBarTransform:(BOOL)transform
 {
-    if (transform) {
+    if (transform)
+    {
         [self barTransformBackToNormalStyle];
     }
 }
 
 - (void)addBookmarkViewController:(AddBookmarkViewController *)controller addAnnotationToMapView:(id <MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[LocationBookmark class]]) {
+    if ([annotation isKindOfClass:[LocationBookmark class]])
+    {
         LocationBookmark *bookmark = (LocationBookmark *)annotation;
         [self.mapView addAnnotation:bookmark];
         
@@ -945,7 +989,9 @@
         
         [self.mapView selectAnnotation:bookmark animated:YES];
         
-    } else if ([annotation isKindOfClass:[PathBookmark class]]) {
+    }
+    else if ([annotation isKindOfClass:[PathBookmark class]])
+    {
         PathBookmark *bookmark = (PathBookmark *)annotation;
         [self.mapView addAnnotation:bookmark];
         
@@ -953,7 +999,9 @@
         [_mapView setRegion:area animated:YES];
         
         [self.mapView selectAnnotation:bookmark animated:YES];
-    } else if ([annotation isKindOfClass:[RegionBookmark class]]) {
+    }
+    else if ([annotation isKindOfClass:[RegionBookmark class]])
+    {
         RegionBookmark *bookmark = (RegionBookmark *)annotation;
         [self.mapView addAnnotation:bookmark];
         
