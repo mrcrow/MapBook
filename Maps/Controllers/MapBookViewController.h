@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "PopoverView.h"
+
 #import "BookmarkViewController.h"
 #import "AddBookmarkViewController.h"
 #import "AnnotationDetailController.h"
@@ -19,7 +21,7 @@ enum {
 };
 typedef NSInteger UserInputMode;
 
-@interface MapBookViewController : UIViewController <MKMapViewDelegate, UIActionSheetDelegate, NSFetchedResultsControllerDelegate, BookmarkViewControllerDelegat, AddBookmarkViewControllerDelegate>
+@interface MapBookViewController : UIViewController <MKMapViewDelegate, UIActionSheetDelegate, NSFetchedResultsControllerDelegate, BookmarkViewControllerDelegat, AddBookmarkViewControllerDelegate, PopoverViewDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

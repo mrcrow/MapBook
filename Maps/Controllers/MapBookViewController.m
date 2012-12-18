@@ -86,7 +86,7 @@
 {
     MKUserTrackingBarButtonItem *trackingButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     
-    UIBarButtonItem *mapTypeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPageCurl target:self action:@selector(performCurveAnimation)];
+    UIBarButtonItem *mapTypeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPageCurl target:self action:@selector(changeMapType)];
     
     self.overlaysButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showOverlayList)];
     self.overlaysButton.style = UIBarButtonItemStyleBordered;
@@ -258,8 +258,13 @@
 
 #pragma mark - Button Methods
 
-- (void)performCurveAnimation
+#define MapTypeArray [NSArray arrayWithObjects:@"Standard", @"Satellite", @"Hybrid", nil]
+
+
+- (void)changeMapType
 {
+    [PopoverView showPopoverAtPoint:CGPointMake(330.0, 370.0) inView:self.mapView withTitle:@"MapType" withStringArray:MapTypeArray delegate:self];
+    /*
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
     [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.mapView cache:YES];
@@ -269,6 +274,7 @@
     } else {
         self.mapView.mapType = MKMapTypeStandard;
     }
+     */
 }
 
 - (void)showOverlayList
@@ -1011,5 +1017,33 @@
         [self.mapView selectAnnotation:bookmark animated:YES];
     }
 }
+
+#pragma mark - Popover Delegate Method
+
+- (void)popoverView:(PopoverView *)popoverView didSelectItemAtIndex:(NSInteger)index
+{
+    //Figure out which string was selected, store in "string"
+    NSString *string = [MapTypeArray objectAtIndex:index];
+    
+    //Show a success image, with the string from the array
+    [popoverView showImage:[UIImage imageNamed:@"success"] withMessage:string];
+    
+    if ([string isEqualToString:@"Standard"])
+    {
+        self.mapView.mapType = MKMapTypeSatellite;
+    }
+    else if ([string isEqualToString:@"Satellite"])
+    {
+        self.mapView.mapType = MKMapTypeSatellite;
+    }
+    else
+    {
+        self.mapView.mapType = MKMapTypeHybrid;
+    }
+    
+    //Dismiss the PopoverView after 0.5 seconds
+    [popoverView performSelector:@selector(dismiss) withObject:nil afterDelay:0.5f];
+}
+
 
 @end
