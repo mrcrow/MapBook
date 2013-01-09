@@ -1025,7 +1025,7 @@
     [popoverView showImage:[UIImage imageNamed:@"success"] withMessage:string];
     
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationDuration:1.0];
     [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.mapView cache:YES];
     [UIView commitAnimations];
     
