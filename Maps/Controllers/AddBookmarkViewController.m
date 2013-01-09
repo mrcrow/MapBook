@@ -70,7 +70,7 @@
     return self;
 }
 
-- (void)setAnnotation:(id<MKAnnotation>)annot type:(NSInteger)type coordinateInfo:(NSMutableArray *)array locationInfo:(NSArray *)info objectID:(NSDate *)date
+- (void)setAnnotation:(id<MKAnnotation>)annot type:(NSInteger)type coordinateInfo:(NSMutableArray *)array locationInfo:(NSArray *)info creationDate:(NSDate *)date
 {
     [self setOverlayObject:annot];
     [self setBookmarkType:type];
@@ -267,6 +267,40 @@
     [self setManagedObjectContext:nil];
 }
 
+#pragma mark - Resign First Response
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self resignFirstResponse];
+}
+
+- (void)resignFirstResponse
+{
+    if (_titleField.isFirstResponder)
+    {
+        [_titleField resignFirstResponder];
+    }
+    
+    if (_locationField.isFirstResponder)
+    {
+        [_locationField resignFirstResponder];
+    }
+    
+    if (_locationFromField.isFirstResponder)
+    {
+        [_locationFromField resignFirstResponder];
+    }
+    if (_locationToField.isFirstResponder)
+    {
+        [_locationToField resignFirstResponder];
+    } 
+    
+    if (_contentField.isFirstResponder)
+    {
+        [_contentField resignFirstResponder];
+    } 
+}
+
 #pragma mark - UITableView Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -336,7 +370,7 @@
 {   
     if (section == 1)
     {
-        return @"Enter the ending symbols (e.g. '. ! ?') can help you to start a new paragraph.";
+        return @"Typing the following symbol (e.g. '. ! ?') can help you to start a new paragraph.";
     } 
 
     if (section == 5) 
@@ -632,11 +666,6 @@
         }
     }
     return YES;
-}
-
-- (void)textFieldFinished:(id)sender
-{
-    [sender resignFirstResponder];
 }
 
 - (UITableViewCell *)cellForTitle

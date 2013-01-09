@@ -44,8 +44,8 @@
 		E8B87D80166DF0DD00C30DFB /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B87D63166DF07100C30DFB /* ActionSheetStringPicker.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E8B87D81166DF0DD00C30DFB /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B87D65166DF07100C30DFB /* DistancePickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E8C289F6165B6B8700EEC5E1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */; };
-		E8D81CFD16804A1E00C53E4F /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D81CFB16804A1C00C53E4F /* success.png */; };
-		E8D81CFE16804A1E00C53E4F /* success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D81CFC16804A1D00C53E4F /* success@2x.png */; };
+		E8D81D0116804A5200C53E4F /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D81CFF16804A5100C53E4F /* success.png */; };
+		E8D81D0216804A5200C53E4F /* success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D81D0016804A5100C53E4F /* success@2x.png */; };
 		E8E40278161736490058C247 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E40277161736490058C247 /* UIKit.framework */; };
 		E8E4027A161736490058C247 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E40279161736490058C247 /* Foundation.framework */; };
 		E8E4027C161736490058C247 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E4027B161736490058C247 /* CoreGraphics.framework */; };
@@ -144,8 +144,8 @@
 		E8B87D74166DF0AC00C30DFB /* CQMPathUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CQMPathUtilities.h; path = Reference/CQMFloatingView/CQMPathUtilities.h; sourceTree = "<group>"; };
 		E8B87D75166DF0AC00C30DFB /* CQMPathUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CQMPathUtilities.m; path = Reference/CQMFloatingView/CQMPathUtilities.m; sourceTree = "<group>"; };
 		E8C289F5165B6B8600EEC5E1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		E8D81CFB16804A1C00C53E4F /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = success.png; path = icons/success.png; sourceTree = "<group>"; };
-		E8D81CFC16804A1D00C53E4F /* success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "success@2x.png"; path = "icons/success@2x.png"; sourceTree = "<group>"; };
+		E8D81CFF16804A5100C53E4F /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = success.png; path = icons/success.png; sourceTree = "<group>"; };
+		E8D81D0016804A5100C53E4F /* success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "success@2x.png"; path = "icons/success@2x.png"; sourceTree = "<group>"; };
 		E8E40273161736490058C247 /* MapBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E40277161736490058C247 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E8E40279161736490058C247 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -250,8 +250,8 @@
 		E8A75DBE164E627700068B53 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				E8D81CFB16804A1C00C53E4F /* success.png */,
-				E8D81CFC16804A1D00C53E4F /* success@2x.png */,
+				E8D81CFF16804A5100C53E4F /* success.png */,
+				E8D81D0016804A5100C53E4F /* success@2x.png */,
 				E886107D16612B290014650C /* arrowDown.png */,
 				E886107E16612B290014650C /* arrowDownGreen.png */,
 				E886107F16612B290014650C /* arrowDownPurple.png */,
@@ -461,8 +461,8 @@
 				E8A061C816636F8800EC937C /* BookmarkViewController.xib in Resources */,
 				E8A061C916636F8800EC937C /* MapBookViewController.xib in Resources */,
 				E8A061CA16636F8800EC937C /* PageViewController.xib in Resources */,
-				E8D81CFD16804A1E00C53E4F /* success.png in Resources */,
-				E8D81CFE16804A1E00C53E4F /* success@2x.png in Resources */,
+				E8D81D0116804A5200C53E4F /* success.png in Resources */,
+				E8D81D0216804A5200C53E4F /* success@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +523,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -538,6 +539,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -548,7 +551,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -557,6 +561,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

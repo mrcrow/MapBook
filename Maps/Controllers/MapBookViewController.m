@@ -72,7 +72,37 @@
     return self;
 }
 
-#pragma mark - Setup Buttons 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self mapViewSetup];
+    [self buttonsSetup];  
+    [self annotationRetainerSetup];
+    [self loadAnnotations];
+}
+
+- (void)viewDidUnload
+{
+    [self setFetchedResultsController:nil];
+    [self setManagedObjectContext:nil];
+    [self setOverlayListViewController:nil];
+    [self setAnnotationController:nil];
+    [super viewDidUnload];
+    [self setOverlaysButton:nil];
+    [self setCancelButton:nil];
+    [self setDoneButton:nil];
+    [self setTrashButton:nil];
+    [self setAddButton:nil];
+    [self setTypeSelectionButton:nil];
+    [self setSelectionActionSheet:nil];
+    [self setCancelActionSheet:nil];
+    [self setLpgr:nil];
+    [self setUserInputAnnotations:nil];
+    [self setMapView:nil];
+    [self setTargetImage:nil];
+}
+
+#pragma mark - View Setups
 
 - (void)mapViewSetup
 {
@@ -95,11 +125,11 @@
     self.trashButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemUndo target:self action:@selector(noteRemoveLastAnnotationFromMapView)];
     self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNoteToMapView)];
     self.addButton.style = UIBarButtonItemStyleBordered;
-        
+    
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     self.typeSelectionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(noteTypeSelection)];
     self.typeSelectionButton.style = UIBarButtonItemStyleBordered;
-
+    
     //add button to toolbar
     NSArray *toolBarItems = [NSArray arrayWithObjects:trackingButton, fixedSpace, self.typeSelectionButton, fixedSpace, mapTypeButton, nil];
     [self setToolbarItems:toolBarItems];
@@ -114,7 +144,7 @@
     self.userInputPoints = [[NSMutableArray alloc] init];
 }
 
-#pragma mark - App StartUp Loading
+#pragma mark - Load Annotations
 
 - (void)loadAnnotations
 {
@@ -146,11 +176,11 @@
             for (int i = 0; i < [points count]; i++)
             {
                 coords[i] = CLLocationCoordinate2DMake([[points objectAtIndex:i] CGPointValue].x, [[points objectAtIndex:i] CGPointValue].y);
-            }         
+            }
             MKPolyline *path = [MKPolyline polylineWithCoordinates:coords count:[points count]];
             
             NSArray *positions = [object.locationName componentsSeparatedByString:@"/"];
-                    
+            
             for (int i = 0; i < 2; i ++)
             {
                 if (i == 0)
@@ -163,12 +193,12 @@
                 else
                 {
                     CLLocationCoordinate2D end = CLLocationCoordinate2DMake([[points lastObject] CGPointValue].x, [[points lastObject] CGPointValue].y);
-                     NSString *position = [NSString stringWithFormat:@"Finished at %@", [positions objectAtIndex:1]];
+                    NSString *position = [NSString stringWithFormat:@"Finished at %@", [positions objectAtIndex:1]];
                     PathBookmark *mark = [[PathBookmark alloc] initWithPolyline:path coordinate:end objectID:object.annoID activity:object.activity position:position];
                     [self.mapView addAnnotation:mark];
                 }
             }
-
+            
         } break;
             
         case 3: {
@@ -178,43 +208,13 @@
             for (int i = 0; i < [points count]; i++)
             {
                 coords[i] = CLLocationCoordinate2DMake([[points objectAtIndex:i] CGPointValue].x, [[points objectAtIndex:i] CGPointValue].y);
-            }         
+            }
             MKPolygon *region = [MKPolygon polygonWithCoordinates:coords count:[points count]];
-
+            
             RegionBookmark *mark = [[RegionBookmark alloc] initWithPolygon:region objectID:object.annoID activity:object.activity location:object.locationName];
             [self.mapView addAnnotation:mark];
         } break;
     }
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [self mapViewSetup];
-    [self buttonsSetup];  
-    [self annotationRetainerSetup];
-    [self loadAnnotations];
-}
-
-- (void)viewDidUnload
-{
-    [self setFetchedResultsController:nil];
-    [self setManagedObjectContext:nil];
-    [self setOverlayListViewController:nil];
-    [self setAnnotationController:nil];
-    [super viewDidUnload];
-    [self setOverlaysButton:nil];
-    [self setCancelButton:nil];
-    [self setDoneButton:nil];
-    [self setTrashButton:nil];
-    [self setAddButton:nil];
-    [self setTypeSelectionButton:nil];
-    [self setSelectionActionSheet:nil];
-    [self setCancelActionSheet:nil];
-    [self setLpgr:nil];
-    [self setUserInputAnnotations:nil];
-    [self setMapView:nil];
-    [self setTargetImage:nil];
 }
 
 #pragma mark - Fetched Results Controller
@@ -260,21 +260,9 @@
 
 #define MapTypeArray [NSArray arrayWithObjects:@"Standard", @"Satellite", @"Hybrid", nil]
 
-
 - (void)changeMapType
 {
     [PopoverView showPopoverAtPoint:CGPointMake(330.0, 370.0) inView:self.mapView withTitle:@"MapType" withStringArray:MapTypeArray delegate:self];
-    /*
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.mapView cache:YES];
-    [UIView commitAnimations];
-    if (self.mapView.mapType == MKMapTypeStandard) {
-        self.mapView.mapType = MKMapTypeHybrid;
-    } else {
-        self.mapView.mapType = MKMapTypeStandard;
-    }
-     */
 }
 
 - (void)showOverlayList
@@ -362,7 +350,7 @@
                                 type:self.inputMode
                       coordinateInfo:self.userInputPoints 
                         locationInfo:locations 
-                            objectID:[NSDate date]];
+                        creationDate:[NSDate date]];
     UINavigationController *addNavigationViewController = [[UINavigationController alloc] initWithRootViewController:addViewController];
     [self presentModalViewController:addNavigationViewController animated:YES];
     [self clearMapViewAnnotations];
@@ -378,7 +366,7 @@
     [self.selectionActionSheet showFromToolbar:self.navigationController.toolbar];
 }
 
-#pragma mark - Annotation Methods
+#pragma mark - Annotation Creation Methods
 
 - (NSArray *)extractLocationInfoFromAnnotation:(id <MKAnnotation>)annot
 {
@@ -446,7 +434,7 @@
     [userInputPoints removeAllObjects];
 }
 
-#pragma mark - Title Reset Method
+#pragma mark - Title Reset 
 
 - (void)titleReset
 {
@@ -484,7 +472,8 @@
         }
     }
     
-    if (actionSheet == self.cancelActionSheet) {
+    if (actionSheet == self.cancelActionSheet)
+    {
         switch (buttonIndex)
         {
             case 0:
@@ -694,9 +683,16 @@
             [rightButton setFrame:CGRectMake(0.0f, 0.0f, 20.0f, 20.0f)];
             [rightButton setImage:[UIImage imageNamed:@"arrowRightGreen.png"] forState:UIControlStateNormal];
             
+            UIButton *test = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
+            
             customPinView.leftCalloutAccessoryView = leftButton;
             customPinView.leftCalloutAccessoryView.tag = 0;
-            customPinView.rightCalloutAccessoryView = rightButton;
+            customPinView.rightCalloutAccessoryView = test;
+            
+#warning hehehehe 
+            NSLog(@"%f, %f", test.frame.size.height, test.frame.size.width);
+            
             customPinView.rightCalloutAccessoryView.tag = 1;
             
             return customPinView;
@@ -1028,17 +1024,23 @@
     //Show a success image, with the string from the array
     [popoverView showImage:[UIImage imageNamed:@"success"] withMessage:string];
     
-    if ([string isEqualToString:@"Standard"])
-    {
-        self.mapView.mapType = MKMapTypeSatellite;
-    }
-    else if ([string isEqualToString:@"Satellite"])
-    {
-        self.mapView.mapType = MKMapTypeSatellite;
-    }
-    else
-    {
-        self.mapView.mapType = MKMapTypeHybrid;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.mapView cache:YES];
+    [UIView commitAnimations];
+    
+    switch (index) {
+        case 0: {
+            self.mapView.mapType = MKMapTypeStandard;
+        } break;
+            
+        case 1: {
+            self.mapView.mapType = MKMapTypeSatellite;
+        } break;
+            
+        default: {
+            self.mapView.mapType = MKMapTypeHybrid;
+        } break;
     }
     
     //Dismiss the PopoverView after 0.5 seconds

@@ -24,7 +24,8 @@ typedef NSInteger BookmarkType;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-- (void)setAnnotation:(id<MKAnnotation>)annot type:(NSInteger)type coordinateInfo:(NSMutableArray *)array locationInfo:(NSArray *)info objectID:(NSDate *)date;
+- (void)setAnnotation:(id<MKAnnotation>)annot type:(NSInteger)type coordinateInfo:(NSMutableArray *)array locationInfo:(NSArray *)info creationDate:(NSDate *)date;
+
 @end
 
 @protocol AddBookmarkViewControllerDelegate
